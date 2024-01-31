@@ -20,6 +20,7 @@ public class University {
         students.add(student);
     }
     public void listStudentsByStudentNumber() {
+        System.out.println("Opiskelijat:");
         for (Student i : students) {
             System.out.println(i.getStudentNumber() + ": " + i.getStudentName());
         }
