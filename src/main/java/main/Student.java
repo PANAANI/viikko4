@@ -1,10 +1,12 @@
 package main;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
-public class Student {
+public class Student implements Serializable {
     final private String student_name;
     final private String student_number;
+    final private static long serialVersionUID = 24314314L;
     private HashMap<String, Integer> grades = new HashMap<>();
     public Student(String _student_name, String _student_number) {
         student_name = _student_name;

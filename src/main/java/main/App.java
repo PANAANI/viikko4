@@ -10,17 +10,6 @@ public class App
         int student_index = 0;
         University university = new University();
         Calculator calculator = new Calculator();
-        /*
-        Student student = new Student("Joona Niemenmaa", "001823383");
-        student.addGrade("Ohjelmoinnin perusteet", 5);
-        student.addGrade("Ohjelmistotuotanto", 4);
-        student.addGrade("Basics of Linux", 5);
-        student.addGrade("Foundations of Information Processing", 3);
-        student.addGrade("Elektroniikan perusteet", 3);
-        student.addGrade("Johdadus tite opiskeluun", 4);
-        university.addStudent(student); 
-        */
-        
         while (!"0".equals(choice)) {
             System.out.println("1) Lisää opiskelija, 2) Listaa opiskelijat, 3) Lisää opiskelijalle suorite, 4) Listaa opiskelijan suoritteet, 5) Laske opiskelijan suoritusten keskiarvo, 6) Laske opiskelijan suoritusten mediaani, 7) Tallenna opiskelijat tiedostoon, 8) Lataa opiskelijat tiedostosta, 0) Lopeta ohjelma");
             choice = sc.nextLine();
@@ -65,6 +54,12 @@ public class App
                     student_index = Integer.parseInt(sc.nextLine());
                     double median = calculator.getMedianGrade(university.getStudentByIndex(student_index));
                     System.out.println("Mediaani on " + median);
+                    break;
+                case "7":
+                    university.saveStudents();
+                    break;
+                case "8":
+                    university.loadStudents();
                     break;
                 case "0":
                     System.out.println("Kiitos ohjelman käytöstä.");
