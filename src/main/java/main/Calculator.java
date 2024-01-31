@@ -39,7 +39,7 @@ public class Calculator {
             median_index = (int)(Math.floor((double)(grade_array.length) / 2d));
             median = grade_array[median_index];
         } else if (input_remainder == 0) {
-            median = (grade_array[(grade_array.length - 1) / 2] + grade_array[((grade_array.length - 1) / 2) + 1]) / 2;
+            median = (double)(grade_array[(grade_array.length - 1) / 2] + grade_array[((grade_array.length - 1) / 2) + 1]) / 2;
         }
         return median;
     }
