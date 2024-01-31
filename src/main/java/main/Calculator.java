@@ -7,6 +7,9 @@ public class Calculator {
 
     }
     public double getAverageGrade(Student student) {
+        if (student.getStudentGrades().size() == 0) {
+            return 0;
+        }
         int sum = 0;
         int iterations = 0;
         for (Integer i : student.getStudentGrades().values()) {
@@ -18,6 +21,9 @@ public class Calculator {
         return average;
     }
     public double getMedianGrade(Student student) {
+        if (student.getStudentGrades().size() == 0) {
+            return 0;
+        }
         int[] grade_array = new int[student.getStudentGrades().size()];
         int index = 0;
         for (Integer i : student.getStudentGrades().values()) {
